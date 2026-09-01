@@ -1,15 +1,18 @@
-import { Text, View } from "react-native";
+import UserForm from "@/components/Form";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <UserForm />
+    </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    padding: 12,
+    gap: 16,
+  },
+});
