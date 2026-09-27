@@ -1,22 +1,70 @@
 import TextInput from "@/components/TextIput";
 import React from "react";
-import { Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Button,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  useColorScheme,
+  View,
+} from "react-native";
 
 export default function Index() {
+  const theme = useColorScheme();
+  const isDarkMode = theme === "dark";
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Login Form</Text>
-      <View style={styles.cardContainer}>
+    <View
+      style={StyleSheet.flatten([
+        styles.container,
+        { backgroundColor: isDarkMode ? "#222" : "#f4f4f4" },
+      ])}
+    >
+      <Text
+        style={StyleSheet.flatten([
+          styles.header,
+          { color: isDarkMode ? "#f4f4f4" : "#222" },
+        ])}
+      >
+        Login Form
+      </Text>
+      <View
+        style={StyleSheet.flatten([
+          styles.cardContainer,
+          { backgroundColor: isDarkMode ? "#333" : "whitesmoke" },
+        ])}
+      >
         <View style={styles.cardWrapper}>
-          <Text style={styles.label}>Name</Text>
+          <Text
+            style={StyleSheet.flatten([
+              styles.label,
+              { color: isDarkMode ? "#f4f4f4" : "#222" },
+            ])}
+          >
+            Name
+          </Text>
           <TextInput placeholder="Enter your fullname" />
         </View>
         <View style={styles.cardWrapper}>
-          <Text style={styles.label}>Email</Text>
+          <Text
+            style={StyleSheet.flatten([
+              styles.label,
+              { color: isDarkMode ? "#f4f4f4" : "#222" },
+            ])}
+          >
+            Email
+          </Text>
           <TextInput placeholder="Enter a valid email" />
         </View>
         <View style={styles.cardWrapper}>
-          <Text style={styles.label}>Password</Text>
+          <Text
+            style={StyleSheet.flatten([
+              styles.label,
+              { color: isDarkMode ? "#f4f4f4" : "#222" },
+            ])}
+          >
+            Password
+          </Text>
           <TextInput placeholder="Enter a password" secureTextEntry={true} />
         </View>
 
